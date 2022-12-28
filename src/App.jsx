@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { getWeatherDataFromLocation } from './api/weather';
 import './App.css';
-import locationWeather from './mock';
+import locationWeather from './mocks/weather-results';
 // import handleGeolocation from './utils/location';
 
 function App() {
