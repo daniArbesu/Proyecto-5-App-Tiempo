@@ -55,7 +55,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: inherit;
   text-decoration: inherit;
 }
 a:hover {
@@ -218,7 +218,7 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px 16px;
+  padding: 16px;
   gap: 5px;
 }
 
@@ -241,7 +241,6 @@ button:focus-visible {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
   gap: 8px;
 }
 
@@ -258,4 +257,10 @@ button:focus-visible {
   justify-content: flex-end;
   align-items: center;
   padding: 0px 17px 0px 0px;
+}
+
+.card-weather-five-days {
+  padding: 16px;
+  padding-top: 0;
+  text-align: left;
 }

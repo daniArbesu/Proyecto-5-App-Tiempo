@@ -135,6 +135,9 @@ function App() {
               </div>
             </div>
           </div>
+          <div className="card-weather-five-days">
+            <a href="/">5-day forecast →</a>
+          </div>
         </article>
       </section>
     </div>
