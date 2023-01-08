@@ -1,4 +1,4 @@
-/* const locationWeather = {
+const locationWeather = {
   coord: { lon: -0.3471, lat: 39.4666 },
   weather: [{ id: 800, main: 'Clear', description: 'clear sky', icon: '01n' }],
   base: 'stations',
@@ -19,8 +19,8 @@
   id: 6362115,
   name: 'Valencia',
   cod: 200
-}; */
-
+};
+/*
 const locationWeather = {
   coord: {
     lon: 10.99,
@@ -70,5 +70,5 @@ const locationWeather = {
   name: 'Zocca',
   cod: 200
 };
-
+*/
 export default locationWeather;
