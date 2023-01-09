@@ -68,7 +68,7 @@ function App() {
                   <p>ºC</p>
                 </div>
               </div>
-              <p>Feels like {weather.main.feels_like} º</p>
+              <p>Feels like {Math.round(weather.main.feels_like)} º</p>
             </div>
           </div>
           <div className="card-weather-extra">
