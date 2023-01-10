@@ -45,7 +45,9 @@ function App() {
         </header>
         <article>
           <div className="card-city-info">
-            <h2>{weather.name}</h2>
+            <h2>
+              {weather.name}, {weather.sys.country}
+            </h2>
             <p className="card-weather-date">{new Date(weather.dt * 1000).toLocaleString()}</p>
           </div>
           <div className="card-weather-info">
