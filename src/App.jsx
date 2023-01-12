@@ -30,8 +30,6 @@ function App() {
             <svg
               clipRule="evenodd"
               fillRule="evenodd"
-              width="24"
-              height="24"
               strokeLinejoin="round"
               strokeMiterlimit="2"
               viewBox="0 0 24 24"
@@ -51,15 +49,24 @@ function App() {
             <p className="card-weather-date">{new Date(weather.dt * 1000).toLocaleString()}</p>
           </div>
           <div className="card-weather-info">
-            <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="" />
-            <div className="temperature-wrapper">
-              <div className="degrees">
-                <p className="temperature">{Math.round(weather.main.temp)}</p>
-                <p className="weather-description">{weather.weather[0].description}</p>
+            <div className="weather-wrapper">
+              <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="" />
+              <p className="weather-description">{weather.weather[0].description}</p>
+            </div>
+            <div className="temperature-all-wrapper">
+              <div className="temperature-max-min">
+                <p>Day {Math.round(weather.main.temp_max)}º ⬆️</p>
+                <p>Night {Math.round(weather.main.temp_min)}º ⬇️</p>
               </div>
-              <div className="degree-sign">
-                <p>ºC</p>
+              <div className="temperature-wrapper">
+                <div className="degrees">
+                  <p className="temperature">{Math.round(weather.main.temp)}</p>
+                </div>
+                <div className="degree-sign">
+                  <p>ºC</p>
+                </div>
               </div>
+              <p>Feels like {weather.main.feels_like} º</p>
             </div>
           </div>
           <div className="card-weather-extra">

@@ -2,7 +2,7 @@
   /* COLOR PALETTE */
   --da-color-primary-light: #ffffff;
   --da-color-primary-dark: #213547;
-  --da-color-read-more: #c0c0c0;
+  --da-color-secondary-dark: rgba(60, 60, 67, 0.6);
   --da-color-shadow: rgba(0, 0, 0, 0.16);
   --da-color-glass-effect: rgba(255, 255, 255, 0.29);
 
@@ -21,6 +21,7 @@
   --da-typography-margin-heading: 2rem;
 
   /* PADDING */
+  --da-search-bar-padding: 0.5rem;
   --da-card-header-padding: 0.75rem;
 
   /* GAP */
@@ -131,9 +132,15 @@ button:focus-visible {
   align-items: center;
   background: var(--da-color-primary-light);
   border-radius: var(--da-radius-search-bar);
-  padding: 8px;
+  padding: var(--da-search-bar-padding);
   gap: 8px;
   width: 100%;
+  color: var(--da-color-secondary-dark);
+}
+
+.search-bar > svg {
+  fill: var(--da-color-secondary-dark);
+  width: 24px;
 }
 
 .card-city-info {
@@ -157,6 +164,7 @@ button:focus-visible {
   justify-content: space-between;
   align-items: center;
   padding: 4px 30px;
+  gap: 40px;
 }
 
 .temperature-wrapper {
@@ -165,6 +173,22 @@ button:focus-visible {
   justify-content: center;
   align-items: flex-start;
   padding: 0px;
+}
+
+.temperature-all-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.temperature-max-min {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
 
 .degrees {
