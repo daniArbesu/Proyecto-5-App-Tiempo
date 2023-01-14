@@ -29,6 +29,7 @@
   /* BORDER RADIUS */
   --da-radius-button: 0.5rem;
   --da-radius-card: 1.125rem;
+  --da-radius-search-bar: 0.625rem;
 
   font-family: var(--da-typography-typeface);
   line-height: 1.5;
@@ -70,6 +71,9 @@ body {
 
 .App {
   min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 h1 {
@@ -119,6 +123,17 @@ button:focus-visible {
 
 .card-header {
   padding: var(--da-card-header-padding);
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--da-color-primary-light);
+  border-radius: var(--da-radius-search-bar);
+  padding: 8px;
+  gap: 8px;
+  width: 100%;
 }
 
 .card-city-info {
