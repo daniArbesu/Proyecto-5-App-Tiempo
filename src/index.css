@@ -24,7 +24,7 @@
   --da-card-header-padding: 0.75rem;
 
   /* GAP */
-  --da-gap-header: 1rem;
+  --da-gap-city-info: 0.375rem;
 
   /* BORDER RADIUS */
   --da-radius-button: 0.5rem;
@@ -127,7 +127,7 @@ button:focus-visible {
   justify-content: center;
   align-items: flex-start;
   padding: 8px 18px;
-  gap: 6px;
+  gap: var(--da-gap-city-info);
 }
 
 .card-weather-date {
