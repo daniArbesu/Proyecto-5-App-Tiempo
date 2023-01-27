@@ -24,7 +24,7 @@
 
   /* BORDER RADIUS */
   --da-radius-button: 0.5rem;
-  --da-radius-card: 0.5rem;
+  --da-radius-card: 1.125rem;
 
   font-family: var(--da-typography-typeface);
   line-height: 1.5;
@@ -111,8 +111,6 @@ button:focus-visible {
   background: rgba(255, 255, 255, 0.29);
   border: 6px solid #ffffff;
   backdrop-filter: blur(5px);
-
-  border-radius: 18px;
 }
 
 .card-header {
