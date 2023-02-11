@@ -1,0 +1,221 @@
+:root {
+  /* COLOR PALETTE */
+  --da-color-primary-light: #ffffff;
+  --da-color-primary-dark: #213547;
+  --da-color-read-more: #c0c0c0;
+  --da-color-shadow: rgba(0, 0, 0, 0.16);
+
+  /* FONT SIZE */
+  --da-typography-h1: 2.2rem;
+  --da-typography-h2: 1.875rem;
+  --da-typography-h3: 1.1rem;
+  --da-typography-typeface: 'Inter', sans-serif;
+
+  /* LEADING */
+  --da-typography-h1-leading: 1.2;
+  --da-typography-h2-leading: 1.2;
+  --da-typography-p-leading: 1.5;
+
+  /* MARGIN */
+  --da-typography-margin-heading: 2rem;
+
+  /* GAP */
+  --da-gap-header: 1rem;
+
+  /* BORDER RADIUS */
+  --da-radius-button: 0.5rem;
+  --da-radius-card: 0.5rem;
+
+  font-family: var(--da-typography-typeface);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--da-color-primary-light);
+  background-color: var(--da-color-primary-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  background-color: #feb054;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: var(--da-typography-h1);
+  line-height: var(--da-typography-h1-leading);
+}
+
+h2 {
+  font-size: var(--da-typography-h2);
+  line-height: var(--da-typography-h2-leading);
+  font-size: 20px;
+  font-style: normal;
+  line-height: 24px;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  background: var(--da-color-primary-light);
+  color: var(--da-color-primary-dark);
+  box-shadow: 0px 6px 40px var(--da-color-shadow);
+  border-radius: var(--da-radius-card);
+  background: rgba(255, 255, 255, 0.29);
+  border: 6px solid #ffffff;
+  backdrop-filter: blur(5px);
+
+  border-radius: 18px;
+}
+
+.card-header {
+  padding: 12px 11px;
+}
+
+.card-city-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px 18px;
+  gap: 6px;
+}
+
+.card-weather-date {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 11px;
+}
+
+.card-weather-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 30px;
+}
+
+.temperature-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+}
+
+.degrees {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+.temperature {
+  font-weight: 700;
+  font-size: 43px;
+  line-height: 52px;
+}
+
+.weather-description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.degree-sign {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.card-weather-extra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 16px;
+  gap: 5px;
+}
+
+.card-weather-extra-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px 11px;
+
+  background: rgba(255, 255, 255, 0.36);
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 0.5rem;
+}
+
+.card-weather-extra-card--left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+}
+
+.card-weather-extra-card--icon {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 9px 10px -3px rgba(23, 126, 37, 0.15), 0px 0px 10px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+  padding: 0.3rem;
+}
+
+.card-weather-extra-card--right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 17px 0px 0px;
+}
