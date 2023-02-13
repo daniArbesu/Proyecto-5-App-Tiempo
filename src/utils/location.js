@@ -5,8 +5,8 @@ const handleGeolocation = (setLocation) => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         setLocation({
-          lat: position.coords.latitude.toFixed(2),
-          lon: position.coords.longitude.toFixed(2)
+          lat: position.coords.latitude.toFixed(4),
+          lon: position.coords.longitude.toFixed(4)
         });
       },
       () => console.error('Sorry, no position available.')
