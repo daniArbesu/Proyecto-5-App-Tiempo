@@ -18,6 +18,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    allowArrowFunctions: true
   }
 };
