@@ -1,13 +1,15 @@
 /* eslint-disable no-console */
-import { useEffect, useState } from 'react';
-import { getWeatherDataFromLocation } from './api/weather';
+import { useEffect } from 'react';
+// import { getWeatherDataFromLocation } from './api/weather';
 import './App.css';
-import WeatherCard from './components/WeatherCard';
-import locationWeather from './mocks/weather-results.json';
+import Weather from './components/WeatherCard';
+import { useLocationWeather } from './hooks/useLocationWeather';
+
 // import handleGeolocation from './utils/location';
 
 function App() {
-  const [weather, setWeather] = useState(locationWeather);
+  // const [weather, setWeather] = useState(locationWeather);
+  const weather = useLocationWeather();
   // const [location, setLocation] = useState({});
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <h1>Weather App</h1>
-      {weather ? <WeatherCard weather={weather} /> : <h2>We couldn't find your location</h2>}
+      <Weather weather={weather} />
     </div>
   );
 }

@@ -1,6 +1,7 @@
-import { extrasLogosSVGPaths } from '../constants/weather';
+/* eslint-disable react/prop-types */
+import extrasLogosSVGPaths from '../constants/weather';
 
-const WeatherExtrasCard = ({ weatherInfo, weather }) => {
+function WeatherExtrasCard({ weatherInfo, weather }) {
   const cardTitle = extrasLogosSVGPaths[weatherInfo].title;
   const logoPath = extrasLogosSVGPaths[weatherInfo].path;
   const weatherUnits = extrasLogosSVGPaths[weatherInfo].units;
@@ -22,6 +23,6 @@ const WeatherExtrasCard = ({ weatherInfo, weather }) => {
       </div>
     </div>
   );
-};
+}
 
 export default WeatherExtrasCard;
