@@ -2,9 +2,10 @@
   /* COLOR PALETTE */
   --da-color-primary-light: #ffffff;
   --da-color-primary-dark: #213547;
-  --da-color-secondary-dark: rgba(60, 60, 67, 0.6);
-  --da-color-shadow: rgba(0, 0, 0, 0.16);
-  --da-color-glass-effect: rgba(255, 255, 255, 0.29);
+  --da-color-secondary-dark: #3c3c4399;
+  --da-color-logos: #213547;
+  --da-color-shadow: #00000029;
+  --da-color-glass-effect: #ffffff4a;
 
   /* FONT SIZE */
   --da-typography-h1: 2.2rem;
@@ -249,6 +250,12 @@ button:focus-visible {
   box-shadow: 0px 9px 10px -3px rgba(23, 126, 37, 0.15), 0px 0px 10px rgba(0, 0, 0, 0.07);
   border-radius: 8px;
   padding: 0.3rem;
+}
+
+.card-weather-extra-card--icon > svg {
+  width: 1.5rem;
+  color: var(--da-color-logos);
+  fill: var(--da-color-logos);
 }
 
 .card-weather-extra-card--right {
