@@ -1,8 +1,10 @@
+import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 import './App.css';
 import Weather from './components/WeatherCard';
 import useGeolocation from './hooks/useGeolocation';
 import { useLocationWeather } from './hooks/useLocationWeather';
+import Forecast from './pages/Forecast';
 
 function App() {
   const { location } = useGeolocation();
@@ -16,10 +18,13 @@ function App() {
   }, [location.lat, location.lon]);
 
   return (
-    <div className="App">
+    <main className="App">
       <h1>Weather App</h1>
       {loading ? <h2>Loading Weather for your location</h2> : <Weather weather={weather} />}
-    </div>
+      <Routes>
+        <Route path="/forecast" element={<Forecast />} />
+      </Routes>
+    </main>
   );
 }
 

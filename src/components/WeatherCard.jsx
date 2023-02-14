@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import WeatherExtrasCard from './WeatherExtrasCard';
 
@@ -45,7 +47,7 @@ function WeatherCard({ weather }) {
           <WeatherExtrasCard weatherInfo="snow" weather={weather.snow} />
         </div>
         <div className="card-weather-five-days">
-          <a href="/">5-day forecast →</a>
+          <Link to="/forecast">5-day forecast →</Link>
         </div>
       </article>
     </section>
