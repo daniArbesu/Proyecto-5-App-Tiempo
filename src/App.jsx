@@ -19,7 +19,7 @@ function App() {
     if (Object.keys(location).length !== 0) {
       getWeather(location);
     }
-  }, [location]);
+  }, [location.lat]);
 
   return (
     <div className="App">
