@@ -8,9 +8,7 @@ export const getWeatherDataFromLocation = async ({ lat, lon }) => {
     const res = await fetch(
       `${OPEN_WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_API_KEY}&units=metric`
     );
-    const json = await res.json();
-
-    const locationWeather = json;
+    const locationWeather = await res.json();
 
     return Object.keys(locationWeather).length === 0
       ? {}
