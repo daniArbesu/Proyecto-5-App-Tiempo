@@ -6,6 +6,10 @@ function WeatherExtrasCard({ weatherInfo, weather }) {
   const logoPath = extrasLogosSVGPaths[weatherInfo].path;
   const weatherUnits = extrasLogosSVGPaths[weatherInfo].units;
 
+  if (!weather) {
+    return null;
+  }
+
   return (
     <div className="card-weather-extra-card">
       <div className="card-weather-extra-card--left">
