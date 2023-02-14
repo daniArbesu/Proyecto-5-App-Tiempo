@@ -1,28 +1,24 @@
-/* eslint-disable no-console */
-import { useEffect, useState } from 'react';
-// import { getWeatherDataFromLocation } from './api/weather';
+import { useEffect } from 'react';
 import './App.css';
 import Weather from './components/WeatherCard';
+import useGeolocation from './hooks/useGeolocation';
 import { useLocationWeather } from './hooks/useLocationWeather';
-import geoLocation from './mocks/location.json';
-
-import handleGeolocation from './utils/location';
 
 function App() {
-  // const [weather, setWeather] = useState(locationWeather);
-  const [location, setLocation] = useState(geoLocation);
-  const { weather, loading, getWeather } = useLocationWeather(location);
+  const { location, getLocation } = useGeolocation();
+  const { weather, loading, getWeather } = useLocationWeather();
 
   useEffect(() => {
-    handleGeolocation(setLocation);
-    // setWeather(locationWeather);
+    if (Object.keys(location).length === 0) {
+      getLocation();
+    }
   }, []);
 
   useEffect(() => {
-    /* getWeatherDataFromLocation(location)
-      .then((data) => setWeather(data))
-      .catch((err) => console.error(err)); */
-    getWeather();
+    // Obtain the weather for the current location
+    if (Object.keys(location).length !== 0) {
+      getWeather(location);
+    }
   }, [location]);
 
   return (

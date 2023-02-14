@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { getWeatherDataFromLocation } from '../api/weather';
 
-export const useLocationWeather = (location) => {
+export const useLocationWeather = () => {
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const getWeather = async () => {
+  const getWeather = async (location) => {
     try {
       setLoading(true);
       const apiWeather = await getWeatherDataFromLocation(location);
