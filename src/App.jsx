@@ -11,7 +11,7 @@ import handleGeolocation from './utils/location';
 function App() {
   // const [weather, setWeather] = useState(locationWeather);
   const [location, setLocation] = useState(geoLocation);
-  const { weather, getWeather } = useLocationWeather(location);
+  const { weather, loading, getWeather } = useLocationWeather(location);
 
   useEffect(() => {
     handleGeolocation(setLocation);
@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <h1>Weather App</h1>
-      <Weather weather={weather} />
+      {loading ? <h2>Loading Weather for your location</h2> : <Weather weather={weather} />}
     </div>
   );
 }
