@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useGeolocation = () => {
   const [location, setLocation] = useState({});
@@ -12,7 +12,7 @@ const useGeolocation = () => {
     throw new Error('Sorry, no position available.');
   }
 
-  const getLocation = () => {
+  useEffect(() => {
     if ('geolocation' in navigator) {
       // geolocation is available
       navigator.geolocation.watchPosition(success, error);
@@ -20,9 +20,9 @@ const useGeolocation = () => {
     }
     // No geolocation available on device
     throw new Error('Geolocation is not supported by your browser');
-  };
+  }, []);
 
-  return { location, getLocation };
+  return { location };
 };
 
 export default useGeolocation;

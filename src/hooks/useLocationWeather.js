@@ -3,7 +3,7 @@ import { getWeatherDataFromLocation } from '../api/weather';
 
 export const useLocationWeather = () => {
   const [weather, setWeather] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const getWeather = async (location) => {
     try {
