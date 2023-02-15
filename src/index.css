@@ -9,12 +9,12 @@
 
   /* FONT SIZE */
   --da-typography-h1: 2.2rem;
-  --da-typography-h2: 1.875rem;
+  --da-typography-h2: 1.25rem;
   --da-typography-typeface: 'Inter', sans-serif;
 
   /* LEADING */
   --da-typography-h1-leading: 1.2;
-  --da-typography-h2-leading: 1.2;
+  --da-typography-h2-leading: 1.5rem;
   --da-typography-p-leading: 1.5;
 
   /* MARGIN */
@@ -48,7 +48,9 @@
   background-color: #feb054;
 }
 
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -85,9 +87,6 @@ h1 {
 h2 {
   font-size: var(--da-typography-h2);
   line-height: var(--da-typography-h2-leading);
-  font-size: 20px;
-  font-style: normal;
-  line-height: 24px;
 }
 
 button {
@@ -107,19 +106,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card-wrapper {
-  display: flex;
-  flex-direction: column;
-
-  background: var(--da-color-primary-light);
-  color: var(--da-color-primary-dark);
-  box-shadow: 0px 6px 40px var(--da-color-shadow);
-  border-radius: var(--da-radius-card);
-  background: var(--da-color-glass-effect);
-  border: 6px solid var(--da-color-primary-light);
-  backdrop-filter: blur(5px);
 }
 
 .card-header {

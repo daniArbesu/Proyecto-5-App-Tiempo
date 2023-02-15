@@ -1,11 +1,11 @@
 import Layout from '../components/Layout';
 
-function Forecast() {
+function Favorites() {
   return (
     <Layout>
-      <h2>Layout</h2>
+      <h2>Favorites</h2>
     </Layout>
   );
 }
 
-export default Forecast;
+export default Favorites;
