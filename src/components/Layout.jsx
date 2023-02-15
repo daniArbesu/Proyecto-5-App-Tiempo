@@ -7,11 +7,11 @@ const CardWrapper = styled.section`
   flex-direction: column;
   background: var(--da-color-primary-light);
   color: var(--da-color-primary-dark);
-  box-shadow: 0px 6px 40px var(--da-color-shadow);
+  box-shadow: var(--da-box-shadow-card);
   border-radius: var(--da-radius-card);
   background: var(--da-color-glass-effect);
-  border: 6px solid var(--da-color-primary-light);
-  backdrop-filter: blur(5px);
+  border: var(--da-border-card);
+  backdrop-filter: var(--da-backdrop-filter-card);
 `;
 
 function Layout({ children }) {
