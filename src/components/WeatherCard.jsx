@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Link } from 'react-router-dom';
-import Layout from './Layout';
+import Layout from '../pages/Layout';
 import SearchBar from './SearchBar';
 import WeatherExtrasCard from './WeatherExtrasCard';
 
