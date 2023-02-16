@@ -14,6 +14,7 @@ const CardWrapper = styled.section`
   backdrop-filter: var(--da-backdrop-filter-card);
   gap: 16px;
   padding: 16px;
+  width: 100%;
 `;
 
 function Layout({ children }) {
