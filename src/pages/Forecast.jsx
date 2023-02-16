@@ -16,7 +16,7 @@ function Forecast({ location }) {
           return <DayForecastCard weather={dayWeather} key={dayWeather.date} />;
         })
       )}
-      <Link to="/">⬅️ Back to Day Weather</Link>
+      <Link to="/">← Back to Day Weather</Link>
     </Layout>
   );
 }
