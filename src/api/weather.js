@@ -37,12 +37,28 @@ export const getWeatherDataFromLocation = async ({ lat, lon }) => {
 export const getForecastDataFromLocation = async ({ lat, lon }) => {
   try {
     const res = await fetch(
-      `/forecast?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_API_KEY}&units=metric`
+      `${OPEN_WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_API_KEY}&units=metric`
     );
-
     const json = await res.json();
 
-    return json;
+    const fiveDaysWeatherArray = [];
+    const threeHoursPerDay = 24 / 3;
+
+    for (let i = 0; i < json.list.length; i += threeHoursPerDay) {
+      fiveDaysWeatherArray.push(json.list.slice(i, i + threeHoursPerDay));
+    }
+
+    const mappedForecast = fiveDaysWeatherArray.map((dailyWeather) => {
+      return {
+        date: new Date(dailyWeather[0].dt * 1000).toLocaleDateString(),
+        icon: dailyWeather[4].weather[0].icon,
+        description: dailyWeather[4].weather[0].description,
+        night_temp: Math.round(Math.min(...dailyWeather.map((hourly) => hourly.main.temp_min))),
+        day_temp: Math.round(Math.max(...dailyWeather.map((hourly) => hourly.main.temp_max)))
+      };
+    });
+
+    return mappedForecast;
   } catch (error) {
     throw new Error('Error fetching forecast data');
   }

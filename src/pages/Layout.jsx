@@ -12,6 +12,8 @@ const CardWrapper = styled.section`
   background: var(--da-color-glass-effect);
   border: var(--da-border-card);
   backdrop-filter: var(--da-backdrop-filter-card);
+  gap: 16px;
+  padding: 16px;
 `;
 
 function Layout({ children }) {

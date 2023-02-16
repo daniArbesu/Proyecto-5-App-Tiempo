@@ -1,9 +1,22 @@
+/* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import Layout from './Layout';
+import DayForecastCard from '../components/DayForecastCard';
+import useForecastWeather from '../hooks/useForecastWeather';
 
-function Forecast() {
+function Forecast({ location }) {
+  const { weather, loading } = useForecastWeather(location);
+
   return (
     <Layout>
-      <h2>Layout</h2>
+      {loading ? (
+        <h2>Recovering Forecast Data</h2>
+      ) : (
+        weather.map((dayWeather) => {
+          return <DayForecastCard weather={dayWeather} key={dayWeather.date} />;
+        })
+      )}
+      <Link to="/">⬅️ Back to Day Weather</Link>
     </Layout>
   );
 }
