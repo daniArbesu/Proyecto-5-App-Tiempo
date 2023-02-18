@@ -30,7 +30,7 @@ const TemperatureWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
 `;
 
@@ -46,17 +46,19 @@ const DegreeSign = styled.p`
   line-height: 15px;
 `;
 
-function FavoritesCard({ name, temperature, icon }) {
+function FavoritesCard({ weather }) {
   return (
     <ExtraCard>
       <Left>
-        <CityName>{name}</CityName>
+        <CityName>
+          {weather.name}, {weather.country}
+        </CityName>
         <TemperatureWrapper>
-          <Temperature>{temperature || '-'}</Temperature>
+          <Temperature>{weather.temperature || '-'}</Temperature>
           <DegreeSign>º</DegreeSign>
         </TemperatureWrapper>
       </Left>
-      <img src={icon} alt={name} />
+      <img src={`http://openweathermap.org/img/wn/${weather.icon}.png`} alt={weather.name} />
     </ExtraCard>
   );
 }

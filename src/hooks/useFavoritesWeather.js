@@ -5,19 +5,18 @@ const useFavoritesWeather = (favorites) => {
   const [favoritesWeather, setFavoritesWeather] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const getFavoritesWeather = () => {
+  const getFavoritesWeather = async () => {
     setLoading(true);
-    favorites.map(async (favoriteLocation) => {
-      await getWeatherDataFromLocation(favoriteLocation.location)
-        .then((weatherData) => {
-          setFavoritesWeather([...favoritesWeather, weatherData]);
-        })
-        .catch(() => {
-          setLoading(false);
+    const favoritesApiWeather = await Promise.all(
+      favorites.map((favoriteLocation) => {
+        try {
+          return getWeatherDataFromLocation(favoriteLocation.location);
+        } catch {
           throw new Error('Something went wrong fecthing Favorites Weather Data');
-        });
-    });
-    console.log(favoritesWeather);
+        }
+      })
+    );
+    setFavoritesWeather(favoritesApiWeather);
     setLoading(false);
   };
 

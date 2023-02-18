@@ -5,7 +5,7 @@ import FavoritesCard from '../components/ui/FavoritesCard';
 import useFavoritesWeather from '../hooks/useFavoritesWeather';
 
 function Favorites() {
-  const { weather, loading } = useFavoritesWeather(favoriteLocations);
+  const { favoritesWeather, loading } = useFavoritesWeather(favoriteLocations);
 
   return (
     <Layout>
@@ -13,14 +13,8 @@ function Favorites() {
       {loading ? (
         <h2>Loading Weather data</h2>
       ) : (
-        weather?.map((locationWeather) => {
-          return (
-            <FavoritesCard
-              name={locationWeather.name}
-              temperature={locationWeather.day_temp}
-              key={locationWeather.name}
-            />
-          );
+        favoritesWeather?.map((locationWeather) => {
+          return <FavoritesCard weather={locationWeather} />;
         })
       )}
       <Link to="/">⬅️ Back to Day Weather</Link>

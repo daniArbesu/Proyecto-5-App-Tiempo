@@ -22,7 +22,7 @@ const favoriteLocations = [
   {
     name: 'Madrid',
     country: 'ES',
-    location: { lat: '40.4165', lon: '-3.7026' }
+    location: { lat: '40.4291', lon: '-3.7011' }
   }
 ];
 
