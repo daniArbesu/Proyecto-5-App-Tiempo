@@ -50,6 +50,8 @@ export const getForecastDataFromLocation = async ({ lat, lon }) => {
 
     const mappedForecast = fiveDaysWeatherArray.map((dailyWeather) => {
       return {
+        name: json.city.name,
+        country: json.city.country,
         date: new Date(dailyWeather[0].dt * 1000).toLocaleDateString(),
         icon: dailyWeather[4].weather[0].icon,
         description: dailyWeather[4].weather[0].description,

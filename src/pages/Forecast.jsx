@@ -12,9 +12,14 @@ function Forecast({ location }) {
       {loading ? (
         <h2>Recovering Forecast Data</h2>
       ) : (
-        weather.map((dayWeather) => {
-          return <DayForecastCard weather={dayWeather} key={dayWeather.date} />;
-        })
+        <>
+          <h2>
+            {weather[0].name}, {weather[0].country}
+          </h2>
+          {weather.map((dayWeather) => {
+            return <DayForecastCard weather={dayWeather} key={dayWeather.date} />;
+          })}
+        </>
       )}
       <Link to="/">← Back to Day Weather</Link>
     </Layout>
