@@ -1,10 +1,19 @@
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import useLocationWeather from '../hooks/useLocationWeather';
 import SearchBar from '../components/SearchBar';
 import WeatherExtrasCard from '../components/WeatherExtrasCard';
+import favoriteLocations from '../constants/location';
 import Layout from './Layout';
+import useGeolocation from '../hooks/useGeolocation';
 
-function LocalWeather({ weather }) {
+function LocalWeather() {
+  const { cityIndex } = useParams();
+  const { location } = useGeolocation();
+  const selectedLocation = cityIndex ? favoriteLocations[cityIndex].location : location;
+  const forecastLink = cityIndex ? `/forecast/${cityIndex}` : '/forecast/';
+  const { weather, loading } = useLocationWeather(selectedLocation);
+
   return (
     <Layout>
       <header className="card-header">
@@ -49,7 +58,7 @@ function LocalWeather({ weather }) {
           <WeatherExtrasCard weatherInfo="snow" weather={weather.snow} />
         </div>
         <div className="card-weather-five-days">
-          <Link to="/forecast">5-day forecast →</Link>
+          <Link to={forecastLink}>5-day forecast →</Link>
         </div>
       </article>
     </Layout>

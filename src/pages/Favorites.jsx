@@ -13,8 +13,8 @@ function Favorites() {
       {loading ? (
         <h2>Loading Weather data</h2>
       ) : (
-        favoritesWeather?.map((locationWeather) => {
-          return <FavoritesCard weather={locationWeather} />;
+        favoritesWeather?.map((locationWeather, index) => {
+          return <FavoritesCard weather={locationWeather} cityIndex={index} />;
         })
       )}
       <Link to="/">⬅️ Back to Day Weather</Link>

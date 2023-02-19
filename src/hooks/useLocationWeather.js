@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getWeatherDataFromLocation } from '../api/weather';
 
-export const useLocationWeather = (location) => {
+const useLocationWeather = (location) => {
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(true);
 

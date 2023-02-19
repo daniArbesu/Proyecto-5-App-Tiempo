@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const ExtraCard = styled.article`
@@ -46,20 +47,22 @@ const DegreeSign = styled.p`
   line-height: 15px;
 `;
 
-function FavoritesCard({ weather }) {
+function FavoritesCard({ weather, cityIndex }) {
   return (
-    <ExtraCard>
-      <Left>
-        <CityName>
-          {weather.name}, {weather.country}
-        </CityName>
-        <TemperatureWrapper>
-          <Temperature>{weather.temperature || '-'}</Temperature>
-          <DegreeSign>º</DegreeSign>
-        </TemperatureWrapper>
-      </Left>
-      <img src={`http://openweathermap.org/img/wn/${weather.icon}.png`} alt={weather.name} />
-    </ExtraCard>
+    <Link to={`/favorites/${cityIndex}`}>
+      <ExtraCard>
+        <Left>
+          <CityName>
+            {weather.name}, {weather.country}
+          </CityName>
+          <TemperatureWrapper>
+            <Temperature>{weather.temperature || '-'}</Temperature>
+            <DegreeSign>º</DegreeSign>
+          </TemperatureWrapper>
+        </Left>
+        <img src={`http://openweathermap.org/img/wn/${weather.icon}.png`} alt={weather.name} />
+      </ExtraCard>
+    </Link>
   );
 }
 
