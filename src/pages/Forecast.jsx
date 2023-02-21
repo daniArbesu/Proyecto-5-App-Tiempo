@@ -21,9 +21,9 @@ function Forecast() {
       ) : (
         <>
           <h2>
-            {weather[0].name}, {weather[0].country}
+            {weather[0]?.name}, {weather[0]?.country}
           </h2>
-          {weather.map((dayWeather) => {
+          {weather?.map((dayWeather) => {
             return <DayForecastCard weather={dayWeather} key={dayWeather.date} />;
           })}
         </>

@@ -15,7 +15,7 @@ const useGeolocation = () => {
   useEffect(() => {
     if ('geolocation' in navigator) {
       // geolocation is available
-      navigator.geolocation.watchPosition(success, error);
+      navigator.geolocation.getCurrentPosition(success, error);
       return;
     }
     // No geolocation available on device

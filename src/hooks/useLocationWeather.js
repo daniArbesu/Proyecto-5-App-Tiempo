@@ -8,10 +8,12 @@ const useLocationWeather = (location) => {
   useEffect(() => {
     (async () => {
       try {
-        setLoading(true);
-        const apiWeather = await getWeatherDataFromLocation(location);
-        if (Object.keys(location).length !== 0) {
-          setWeather(apiWeather);
+        if (location.lat) {
+          setLoading(true);
+          const apiWeather = await getWeatherDataFromLocation(location);
+          if (Object.keys(location).length !== 0) {
+            setWeather(apiWeather);
+          }
         }
       } catch (error) {
         throw new Error('Error setting the weather');

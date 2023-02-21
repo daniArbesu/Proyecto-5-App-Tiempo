@@ -11,6 +11,7 @@ function LocalWeather() {
   const { cityIndex } = useParams();
   const { location } = useGeolocation();
   const selectedLocation = cityIndex ? favoriteLocations[cityIndex].location : location;
+  console.log(selectedLocation);
   const forecastLink = cityIndex ? `/forecast/${cityIndex}` : '/forecast/';
   const { weather, loading } = useLocationWeather(selectedLocation);
 

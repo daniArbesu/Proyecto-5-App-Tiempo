@@ -14,7 +14,9 @@ function Favorites() {
         <h2>Loading Weather data</h2>
       ) : (
         favoritesWeather?.map((locationWeather, index) => {
-          return <FavoritesCard weather={locationWeather} cityIndex={index} />;
+          return (
+            <FavoritesCard weather={locationWeather} cityIndex={index} key={locationWeather.name} />
+          );
         })
       )}
       <Link to="/">⬅️ Back to Day Weather</Link>
