@@ -9,6 +9,8 @@ const useGeolocation = () => {
   }
 
   function error() {
+    // eslint-disable-next-line no-alert
+    alert('You need to allow location service');
     throw new Error('Sorry, no position available.');
   }
 

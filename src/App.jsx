@@ -9,7 +9,6 @@ function App() {
   return (
     <main className="App">
       <h1>Weather App</h1>
-      {/* {loading ? <h2>Loading Weather for your location</h2> : <Weather weather={weather} />} */}
       <Routes>
         <Route path="/" element={<LocalWeather />} />
         <Route path="/forecast" element={<Forecast />} />
