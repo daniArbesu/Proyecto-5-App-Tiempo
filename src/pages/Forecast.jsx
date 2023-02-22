@@ -1,16 +1,17 @@
 /* eslint-disable react/prop-types */
 import { Link, useParams } from 'react-router-dom';
-import Layout from './Layout';
+import Layout from '../components/ui/Layout';
 import DayForecastCard from '../components/DayForecastCard';
 import useForecastWeather from '../hooks/useForecastWeather';
 import useGeolocation from '../hooks/useGeolocation';
 import favoriteLocations from '../constants/location';
+import LinkWrapper from '../components/ui/LinkWrapper';
 
 function Forecast() {
   const { cityIndex } = useParams();
   const { location } = useGeolocation();
   const selectedLocation = cityIndex ? favoriteLocations[cityIndex].location : location;
-  const backLink = cityIndex ? `/favorites/${cityIndex}` : '/favorites/';
+  const backLink = cityIndex ? `/favorites/${cityIndex}` : '/';
 
   const { weather, loading } = useForecastWeather(selectedLocation);
 
@@ -28,7 +29,9 @@ function Forecast() {
           })}
         </>
       )}
-      <Link to={backLink}>← Back to Day Weather</Link>
+      <LinkWrapper>
+        <Link to={backLink}>← Back to Day Weather</Link>
+      </LinkWrapper>
     </Layout>
   );
 }

@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import Favorites from './pages/Favorites';
 import Forecast from './pages/Forecast';
 import LocalWeather from './pages/LocalWeather';

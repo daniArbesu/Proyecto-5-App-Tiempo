@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import Layout from './Layout';
+import Layout from '../components/ui/Layout';
 import favoriteLocations from '../constants/location';
 import FavoritesCard from '../components/ui/FavoritesCard';
 import useFavoritesWeather from '../hooks/useFavoritesWeather';
+import LinkWrapper from '../components/ui/LinkWrapper';
 
 function Favorites() {
   const { favoritesWeather, loading } = useFavoritesWeather(favoriteLocations);
@@ -19,7 +20,9 @@ function Favorites() {
           );
         })
       )}
-      <Link to="/">⬅️ Back to Day Weather</Link>
+      <LinkWrapper>
+        <Link to="/">⬅ Back to Day Weather</Link>
+      </LinkWrapper>
     </Layout>
   );
 }

@@ -1,62 +1,52 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Link } from 'react-router-dom';
-import Layout from '../pages/Layout';
+import styled from 'styled-components';
+import Layout from './ui/Layout';
 import SearchBar from './SearchBar';
+import CardCityInfo from './ui/CardCityInfo';
 import WeatherExtrasCard from './WeatherExtrasCard';
+import CardWeatherInfo from './ui/CardWeatherInfo';
+import ExtraCardWrapper from './ui/ExtraCardWrapper';
+import LinkWrapper from './ui/LinkWrapper';
 
-function WeatherCard({ weather }) {
+const CardHeader = styled.header`
+  padding: var(--da-card-header-padding);
+`;
+
+function WeatherCard({ weather, link }) {
   return (
     <Layout>
-      <header className="card-header">
-        <SearchBar />
-      </header>
+      <CardHeader>
+        <Link to="/favorites">
+          <SearchBar />
+        </Link>
+      </CardHeader>
       <article>
-        <div className="card-city-info">
-          <h2>
-            {weather.name}, {weather.country}
-          </h2>
-          <p className="card-weather-date">{weather.date}</p>
-        </div>
-        <div className="card-weather-info">
-          <div className="weather-wrapper">
-            <img src={`http://openweathermap.org/img/wn/${weather.icon}.png`} alt="" />
-            <p className="weather-description">{weather.description}</p>
-          </div>
-          <div className="temperature-all-wrapper">
-            <div className="temperature-max-min">
-              <p>Day {weather.day_temp}º ⬆️</p>
-              <p>Night {weather.night_temp}º ⬇️</p>
-            </div>
-            <div className="temperature-wrapper">
-              <div className="degrees">
-                <p className="temperature">{weather.temperature}</p>
-              </div>
-              <div className="degree-sign">
-                <p>ºC</p>
-              </div>
-            </div>
-            <p>Feels like {weather.feels_like} º</p>
-          </div>
-        </div>
-        <div className="card-weather-extra">
+        <CardCityInfo weather={weather} />
+        <CardWeatherInfo weather={weather} />
+        <ExtraCardWrapper>
           <WeatherExtrasCard weatherInfo="rain" weather={weather.rain} />
           <WeatherExtrasCard weatherInfo="wind" weather={weather.wind} />
           <WeatherExtrasCard weatherInfo="humidity" weather={weather.humidity} />
           <WeatherExtrasCard weatherInfo="visibility" weather={weather.visibility} />
           <WeatherExtrasCard weatherInfo="clouds" weather={weather.clouds} />
           <WeatherExtrasCard weatherInfo="snow" weather={weather.snow} />
-        </div>
-        <div className="card-weather-five-days">
-          <Link to="/forecast">5-day forecast →</Link>
-        </div>
+        </ExtraCardWrapper>
+        <LinkWrapper>
+          <Link to={link}>5-day forecast →</Link>
+        </LinkWrapper>
       </article>
     </Layout>
   );
 }
 
-function Weather({ weather }) {
-  return weather ? <WeatherCard weather={weather} /> : <h2>We couldn&apos;t find your location</h2>;
+function Weather({ weather, link }) {
+  return weather ? (
+    <WeatherCard weather={weather} link={link} />
+  ) : (
+    <h2>We couldn&apos;t find your location</h2>
+  );
 }
 
 export default Weather;

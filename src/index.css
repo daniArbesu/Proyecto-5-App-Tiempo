@@ -11,23 +11,31 @@
   /* FONT SIZE */
   --da-typography-h1: 2.2rem;
   --da-typography-h2: 1.25rem;
+  --da-subtitle: 0.875rem;
+  --da-subtitle-small: 0.75rem;
+  --da-temperature-value: 2.7rem;
   --da-typography-typeface: 'Inter', sans-serif;
 
   /* LEADING */
   --da-typography-h1-leading: 1.2;
   --da-typography-h2-leading: 1.5rem;
   --da-typography-p-leading: 1.5;
+  --da-subtitle-leading: 0.6875rem;
 
   /* MARGIN */
   --da-typography-margin-heading: 2rem;
 
   /* PADDING */
+  --da-layout-padding: 1.5rem;
+  --da-card-header-padding: 1rem 0;
   --da-search-bar-padding: 0.5rem;
-  --da-card-header-padding: 0.75rem;
+  --da-extra-card-padding: 0.5rem;
+  --da-section-padding: 0.5rem 0;
 
   /* GAP */
   --da-gap-city-info: 0.375rem;
   --da-gap-search-bar: 0.5rem;
+  --da-gap-extra-card: 0.5rem;
 
   /* BORDER RADIUS */
   --da-radius-button: 0.5rem;
@@ -36,7 +44,9 @@
 
   /* BORDER */
   --da-border-card: 0.375rem solid var(--da-color-primary-light);
+  --da-border-extra-card: 0.0313rem solid #ffffff80;
   --da-box-shadow-card: 0px 0.375rem 2.5rem var(--da-color-shadow);
+  --da-icon-shadow-card: 0px 9px 10px -3px #177e2526, 0px 0px 10px #00000012;
   --da-backdrop-filter-card: blur(0.3125rem);
 
   /* LOGO */
@@ -117,139 +127,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card-header {
-  padding: var(--da-card-header-padding);
-}
-
-.card-city-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 8px 18px;
-  gap: var(--da-gap-city-info);
-}
-
-.card-weather-date {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 11px;
-}
-
-.card-weather-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px 30px;
-  gap: 40px;
-}
-
-.temperature-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.temperature-all-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 15px;
-}
-
-.temperature-max-min {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-}
-
-.degrees {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.temperature {
-  font-weight: 700;
-  font-size: 43px;
-  line-height: 52px;
-}
-
-.weather-description {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-.degree-sign {
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 15px;
-}
-
-.card-weather-extra {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px;
-  gap: 5px;
-}
-
-.card-weather-extra-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 8px 11px;
-
-  background: rgba(255, 255, 255, 0.36);
-  border: 0.5px solid rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  font-weight: 400;
-  font-size: 0.8rem;
-  line-height: 0.5rem;
-}
-
-.card-weather-extra-card--left {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-
-.card-weather-extra-card--icon {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0px 9px 10px -3px rgba(23, 126, 37, 0.15), 0px 0px 10px rgba(0, 0, 0, 0.07);
-  border-radius: 8px;
-  padding: 0.3rem;
-}
-
-.card-weather-extra-card--icon > svg {
-  width: 1.5rem;
-  color: var(--da-color-logos);
-  fill: var(--da-color-logos);
-}
-
-.card-weather-extra-card--right {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0px 17px 0px 0px;
-}
-
-.card-weather-five-days {
-  padding: 16px;
-  padding-top: 0;
-  text-align: left;
 }
 
 @media screen and (min-width: 500px) {
