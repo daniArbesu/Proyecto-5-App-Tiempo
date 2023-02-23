@@ -15,20 +15,16 @@ function Forecast() {
 
   const { weather, loading } = useForecastWeather(selectedLocation);
 
-  return (
+  return loading ? (
+    <h2>Recovering Forecast Data</h2>
+  ) : (
     <Layout>
-      {loading ? (
-        <h2>Recovering Forecast Data</h2>
-      ) : (
-        <>
-          <h2>
-            {weather[0]?.name}, {weather[0]?.country}
-          </h2>
-          {weather?.map((dayWeather) => {
-            return <DayForecastCard weather={dayWeather} key={dayWeather.date} />;
-          })}
-        </>
-      )}
+      <h2>
+        {weather[0]?.name}, {weather[0]?.country}
+      </h2>
+      {weather?.map((dayWeather) => {
+        return <DayForecastCard weather={dayWeather} key={dayWeather.date} />;
+      })}
       <LinkWrapper>
         <Link to={backLink}>← Back to Day Weather</Link>
       </LinkWrapper>
