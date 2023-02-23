@@ -14,12 +14,11 @@ const useLocationWeather = (location) => {
           if (Object.keys(location).length !== 0) {
             setWeather(apiWeather);
           }
+          setLoading(false);
         }
       } catch (error) {
-        throw new Error('Error setting the weather');
-      } finally {
-        // is executed when it goes through try or catch (avoid duplicating setLoading)
         setLoading(false);
+        throw new Error('Error setting the weather');
       }
     })();
   }, [location.lat, location.lon]);
